@@ -34,8 +34,6 @@ library
       src
   build-depends:
       base >=4.7 && <5
-    , tasty
-    , tasty-hunit
   default-language: Haskell2010
 
 executable tapl
@@ -48,14 +46,14 @@ executable tapl
   build-depends:
       base >=4.7 && <5
     , tapl
-    , tasty
-    , tasty-hunit
   default-language: Haskell2010
 
 test-suite test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Spec.Let
+      Spec.Untyped
       Paths_tapl
   hs-source-dirs:
       test
@@ -64,5 +62,6 @@ test-suite test
       base >=4.7 && <5
     , tapl
     , tasty
+    , tasty-discover
     , tasty-hunit
   default-language: Haskell2010
